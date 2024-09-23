@@ -3,7 +3,7 @@
   marking all kidneys as healthy (PUT /), and removing unhealthy kidneys (DELETE /).
   Each endpoint handles its respective operation and sends a JSON response.
 
-  => its a HTTP server without a database we consider a idol senario of a hospetel and perfoam some opration on server.
+  => its a HTTP server on localhost without a database we consider a idol senario of a hospetel and perfoam some opration on server and chaeak output on "Postman".
 */
 
 
