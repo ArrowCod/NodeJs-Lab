@@ -1,0 +1,19 @@
+<html>
+    <script>
+        function populateDiv(){
+            const a = document.getElementById("firstNumber").value;
+            const b = document.getElementById("secondNumber").value;
+            //const element = document.getElementById("final Sum")
+            //console.log(element)
+            fetch("https://sum-server.100xdevs.com/sum?a="+a+"&b="+b)
+            //element.innerHTML = parseInt(a) + parseInt(b);
+        }
+    </script>
+    <body>
+        <input id= "firstNumber" type="text" placeholder="First Number"></input> <br></br>
+        <input id= "secondNumber" type="text" placeholder="Second Number"></input> <br></br>
+        <button onclick="populateDiv()">Calculate Sun</button> <br></br>
+
+        <div id="final Sum"></div>
+    </body>
+</html>
