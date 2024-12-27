@@ -1,32 +1,51 @@
 import React from "react";
 import { useState } from "react";
 
+let counter = 4; 
 function App() {
- 
 
+  const [todos, setTodos] = useState([{
+    id: 1,
+    title: "gym",
+    description: "go to gym today"
+  },{
+    id: 2,
+    title: "college",
+    description: "go to college today"
+  },{
+    id: 3,
+    title: "Reading",
+    description: "complete the book today!"
+  }])
+
+  function addTodo(){
+    setTodos([...todos, {
+      id: counter++,
+      title: Math.random(),
+      description: Math.random()
+    }])
+  }
+ 
   return (
     <div>
-      <HeaderWithButton></HeaderWithButton>
-      <Header title="Arrow 2"></Header>
+      <button onClick={addTodo} >Add Todo</button>
+     {todos.map(todos => <Todo key={todos.id} title={todos.title} description={todos.description} />)}
     </div>
   )
 }
-function HeaderWithButton(){
-  const [title, setTitle] = useState("my name is Arrow");
+function Todo({title, description}){
 
-  function updateTitle(){
-    setTitle("my name is " + Math.random());
-  }
-  return <div>
-    <button onClick={updateTitle}>Update the Title</button>
-    <Header title={title}></Header>
-  </div>
+  return(
+    <div>
+      <h1>
+        {title}
+      </h1>
+      <h3>
+        {description}
+      </h3>
+    </div>
+  )
 }
 
-function Header({title}){
-  return <div>
-    {title}
-  </div>
-}
 
 export default App
